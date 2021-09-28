@@ -1,0 +1,44 @@
+$(function () {
+  $("#example1").DataTable({
+    "responsive": true, "lengthChange": false, "autoWidth": false,
+    "buttons": ["copy", "csv", "excel", "print"]
+  }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+  $('#example2').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": false,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true
+  });
+
+  ///////////////// editable
+  $("#mentoring").DataTable({
+    "responsive": false, "lengthChange": false, "autoWidth": false,
+    "searching": false, "info": false, "paging": false,
+    "buttons": ["csv", "excel", "print"]
+  }).buttons().container().appendTo('#mentoring_wrapper .col-md-6:eq(0)');
+
+  $("#mentoringPab").DataTable({
+    "responsive": false,
+    "lengthChange": false,
+    "autoWidth": false,
+    "searching": false,
+    "info": true,
+    "paging": true,
+    "buttons": ["csv", "excel", "print"],
+  }).buttons().container().appendTo('#mentoringPab_wrapper .col-md-6:eq(0)');
+
+  $("#mentoring2").DataTable({
+    "responsive": false,
+    "lengthChange": true,
+    "autoWidth": false,
+    "searching": true,
+    "info": true,
+    "paging": true,
+    "buttons": ["csv", "excel", "print"],
+  }).buttons().container().appendTo('#mentoring2_wrapper .col-md-6:eq(0)');
+
+});
