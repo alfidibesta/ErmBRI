@@ -21,6 +21,7 @@
                             role="grid" aria-describedby="example1_info" style="width: 984px;">
                             <thead class="table-info">
                                 <tr role="row">
+                                    <th>No</th>
                                     <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" style="width: 48px;" aria-sort="ascending"
                                         aria-label="Kode Error: activate to sort column descending">Kode
@@ -33,19 +34,19 @@
                                         style="width: 76px;"
                                         aria-label="Jenis Transaksi: activate to sort column ascending">
                                         Jenis Transaksi</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        style="width: 616px;"
+                                    <th class="sorting"
                                         aria-label="Yang Harus Dilakukan: activate to sort column ascending">
                                         Yang Harus Dilakukan</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($cek_kode_eror as $p)
+                            @foreach($KodeEror as $p)
                                 <tr role="row" class="even">
-                                    <td class="sorting_1">{{ $p->kodeEror }}</td>
-                                    <td>{{ $p->keterangan }}</td>
-                                    <td>{{ $p->jenisTransaksi }}</td>
-                                    <td>{{ $p->tindakan }}</td>
+                                    <td style="word-wrap: break-word;">{{ $p->idKode }}</td>
+                                    <td style="word-wrap: break-word;">{{ $p->kodeEror }}</td>
+                                    <td style="word-wrap: break-word;">{{ $p->keterangan }}</td>
+                                    <td style="word-wrap: break-word;">{{ $p->jenisTransaksi }}</td>
+                                    <td style="word-wrap: break-word;">{{ $p->tindakan }}</td>
                                 </tr>
                             @endforeach
                             </tbody>

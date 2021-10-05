@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('cekKodeEror/cekKodeEror','CekKodeErorController@index');
+Route::resource('cekKodeEror/cekKodeEror',\App\Http\Controllers\CekKodeErorController::class);
 
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('login', function () {
@@ -88,11 +88,11 @@ Route::group(['prefix' => 'topTrx'], function () {
     });
 });
 
-Route::group(['prefix' => 'cekKodeEror'], function () {
-    Route::get('cekKodeEror', function () {
-        return view('pages.cekKodeEror.cekKodeEror');
-    });
-});
+//Route::group(['prefix' => 'cekKodeEror'], function () {
+//    Route::get('cekKodeEror', function () {
+//        return view('pages.cekKodeEror.cekKodeEror');
+//    });
+//});
 
 Route::group(['prefix' => 'panduanEdc'], function () {
     Route::get('panduanEdc', function () {

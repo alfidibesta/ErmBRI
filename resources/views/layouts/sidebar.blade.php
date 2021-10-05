@@ -7,8 +7,8 @@
             <img src="{{ url('assets/images/faces/face8.jpg') }}" alt="profile image">
           </div>
           <div class="text-wrapper">
-            <p class="profile-name">Besta Alfidi</p>
-            <small class="designation text-muted">Intership</small>
+            <p class="profile-name">{{ Auth::user()->name }}</p>
+            <small class="designation text-muted">BRI KANWIL</small>
             <span class="status-indicator online"></span>
           </div>
         </div>
