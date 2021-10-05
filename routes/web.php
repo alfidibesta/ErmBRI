@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('cekKodeEror/cekKodeEror',\App\Http\Controllers\CekKodeErorController::class);
+Route::resource('informasi/informasi',\App\Http\Controllers\InformasiController::class);
+
 
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('login', function () {
@@ -76,29 +79,24 @@ Route::group(['prefix' => 'trackingEdc'], function () {
     });
 });
 
-Route::group(['prefix' => 'informasi'], function () {
-    Route::get('informasi', function () {
-        return view('pages.informasi.informasi');
-    });
-});
-
 Route::group(['prefix' => 'topTrx'], function () {
     Route::get('topTrx', function () {
         return view('pages.topTrx.topTrx');
     });
 });
 
-//Route::group(['prefix' => 'cekKodeEror'], function () {
-//    Route::get('cekKodeEror', function () {
-//        return view('pages.cekKodeEror.cekKodeEror');
-//    });
-//});
 
 Route::group(['prefix' => 'panduanEdc'], function () {
     Route::get('panduanEdc', function () {
         return view('pages.panduanEdc.panduanEdc');
     });
 });
+
+//Route::group(['prefix' => 'informasi'], function () {
+//    Route::get('informasi', function () {
+//        return view('pages.informasi.informasi');
+//    });
+//});
 
 Route::group(['prefix' => 'masterData'], function () {
     Route::get('briLinkTargetKc', function () {
